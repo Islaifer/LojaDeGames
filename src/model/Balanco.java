@@ -1,19 +1,21 @@
 package model;
 
+import java.util.List;
+
 public class Balanco {
 	private long id;
-	private Entrada entrada;
-	private Saida saida;
+	private List<Entrada> entradas;
+	private List<Saida> saidas;
 	private double valorEntrada;
 	private double valorSaida;
 	private double ganho;
 	
-	public Balanco(long id, Entrada entrada, Saida saida) {
+	public Balanco(long id, List<Entrada> entradas, List<Saida> saidas) {
 		this.id = id;
-		this.entrada = entrada;
-		this.saida = saida;
-		this.valorEntrada = entrada.getValor();
-		this.valorSaida = saida.getValor();
+		this.entradas = entradas;
+		this.saidas = saidas;
+		this.valorEntrada = 0;
+		this.valorSaida = 0;
 		this.ganho = valorSaida - valorEntrada;
 	}
 
@@ -25,20 +27,20 @@ public class Balanco {
 		this.id = id;
 	}
 
-	public Entrada getEntrada() {
-		return entrada;
+	public List<Entrada> getEntrada() {
+		return entradas;
 	}
 
-	public void setEntrada(Entrada entrada) {
-		this.entrada = entrada;
+	public void setEntrada(List<Entrada> entradas) {
+		this.entradas = entradas;
 	}
 
-	public Saida getSaida() {
-		return saida;
+	public List<Saida> getSaida() {
+		return saidas;
 	}
 
-	public void setSaida(Saida saida) {
-		this.saida = saida;
+	public void setSaida(List<Saida> saidas) {
+		this.saidas = saidas;
 	}
 
 	public double getValorEntrada() {
